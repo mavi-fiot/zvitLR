@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #998af188;
+        }
+        header {
+            text-align: center;
+            background-color: #7130eb8e;
+            padding: 20px;
+        }
+        .author-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .lab-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрування кнопок меню лабораторних робіт */
+            position: relative; /* Для позиціонування кнопок меню змісту */
+            margin-top: -20px; /* Збільшення відступу вгору, щоб підняти кнопки */
+        }
+        .lab-menu button {
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #9b98b6;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap; /* Забороняє переносити текст на новий рядок */
+        }
+        .report-content {
+            display: flex;
+            flex-direction: row;
+        }
+        .info-display {
+            flex: 1;
+            padding: 20px;
+            background-color: #7130eb8e;
+        }
+        .lab-content {
+            flex: 3;
+            padding: 20px;
+            background-color: #9b98b6;
+        }
+        .lab-number {
+            display: flex;
+            justify-content: space-around; /* відцентрування /*flex-start; /* Вирівнювання кнопок ліворуч */
+            flex-wrap: wrap; /* Дозволяє тексту переноситися на новий рядок */
+            margin-top: 20px;
+        }
+        .lab-number div {
+            min-width: 100px; /* Мінімальна ширина кнопки */
+            max-width: 250px; /* Максимальна ширина кнопки */
+            height: 50px;
+            background-color: #7130eb8e;
+            color: #fff;
+            text-align: center;
+            line-height: 25px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden; /* Забороняє виходити тексту за межі кнопки */
+            text-overflow: ellipsis; /* Показує мінімальну частину тексту з меж кнопки, якщо він не поміщається */
+            display: flex; /* Розміщення тексту у дві строчки */
+            flex-direction: column; /* Розміщення тексту у дві строчки */
+            justify-content: center; /* Вирівнювання тексту по центру вертикально */
+            align-items: center; /* Вирівнювання тексту по центру горизонтально */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="FOTO_DOC1.jpg" alt="photo" style="width: 100px; height: auto; float: right;">
+        <h1>Звіти з лабораторних робіт</h1>
+        <h2>З дисципліни "WEB-орієнтовані технології. Основи Frontend та Backend розробок"</h2>
+    </header>
+
+    <!-- Текст про автора -->
+    <div class="author-info">
+        <p>Студент групи ІА-12 Вітрук Микола Анатолійович</p>
+    </div>
+
+    <!-- Меню-робіт -->
+    <div class="lab-menu">
+        <div class="lab-number">
+            <div onclick="displayContent(1)">Лабораторна<br>робота №1</div>
+            <div onclick="displayContent(2)">Лабораторна<br>робота №2</div>
+            <div onclick="displayContent(3)">Лабораторна<br>робота №3</div>
+            <div onclick="displayContent(4)">Лабораторна<br>робота №4</div>
+            <div onclick="displayContent(5)">Лабораторна<br>робота №5</div>
+            <div onclick="displayContent(6)">Лабораторна<br>робота №6</div>
+            <div onclick="displayContent(7)">Лабораторна<br>робота №7</div>
+            <div onclick="displayContent(8)">Лабораторна<br>робота №8</div>
+            <div onclick="displayContent(9)">Лабораторна<br>робота №9</div>
+        </div>
+    </div>
+
+    <!-- Зміст роботи -->
+    <div class="report-content">
+        <!-- Місце для виведення інформації та меню змісту -->
+        <div class="info-display" id="info-display">
+            <!-- Тут буде відображатися меню змісту -->
+        </div>
+        <!-- Місце для змісту роботи -->
+        <div class="lab-content" id="lab-content">
+            <!-- Тут буде зміст лабораторної роботи -->
+        </div>
+    </div>
+
+    <script>
+        // Визначаємо функції displayContent та createSubMenu у глобальному контексті
+        function displayContent(labNumber) {
+            console.log("Функція displayContent викликається з номером роботи:", labNumber);
+    
+            // Очистити попередній вміст
+            document.getElementById("info-display").innerHTML = "";
+            document.getElementById("lab-content").innerHTML = "";
+    
+            // Змінна для збереження змісту лабораторної роботи
+            let labContent = "";
+    
+            // Визначити зміст в залежності від номера лабораторної роботи
+            if (labNumber === 1) {
+                // Встановити зміст лабораторної роботи для першої роботи
+                labContent = `
+                    <h3>Лабораторна робота № 1</h3>
+                    <p>Скористайтесь меню змісту звіту</p> 
+                `;
+                // Створити меню змісту для першої роботи
+                createSubMenu(1);
+            }
+            // Додайте зміст для інших лабораторних робіт, якщо потрібно
+    
+            // Вивести зміст лабораторної роботи в відповідний блок
+            document.getElementById("lab-content").innerHTML = labContent;
+    
+            // Після створення меню змісту налаштовуємо розміри кнопок
+            adjustButtonSizes();
+        }
+    
+        function createSubMenu(labNumber) {
+            let menu = document.createElement("div");
+            menu.className = "lab-menu";
+            let infoDisplay = document.getElementById("info-display");
+            infoDisplay.appendChild(menu);
+    
+            // Тут можна додати кнопки для меню змісту
+            let button1 = document.createElement("button");
+            button1.textContent = "Опис предметного середовища";
+            button1.onclick = function() {
+                displaySubMenuContent("Опис предметного середовища");
+            };
+            menu.appendChild(button1);
+    
+            let button2 = document.createElement("button");
+            button2.textContent = "Тема Мета Місце розташування ЛР №1";
+            button2.onclick = function() {
+                displaySubMenuContent("Тема Мета Місце розташування ЛР №1");
+            };
+            menu.appendChild(button2);
+    
+            let button3 = document.createElement("button");
+            button3.textContent = "СТРУКТУРА ДОКУМЕНТУ";
+            button3.onclick = function() {
+                displaySubMenuContent("СТРУКТУРА ДОКУМЕНТУ");
+            };
+            menu.appendChild(button3);
+    
+            let button4 = document.createElement("button");
+            button4.textContent = "HTML-код ТАБЛИЦЬ";
+            button4.onclick = function() {
+                displaySubMenuContent("HTML-код ТАБЛИЦЬ");
+            };
+            menu.appendChild(button4);
+    
+            let button5 = document.createElement("button");
+            button5.textContent = "HTML-код ФОРМИ";
+            button5.onclick = function() {
+                displaySubMenuContent("HTML-код ФОРМИ");
+            };
+            menu.appendChild(button5);
+    
+            let button6 = document.createElement("button");
+            button6.textContent = "HTML-код ЗОБРАЖЕННЯ";
+            button6.onclick = function() {
+                displaySubMenuContent("HTML-код ЗОБРАЖЕННЯ");
+            };
+            menu.appendChild(button6);
+    
+            let button7 = document.createElement("button");
+            button7.textContent = "ВИСНОВКИ";
+            button7.onclick = function() {
+                displaySubMenuContent("ВИСНОВКИ");
+            };
+            menu.appendChild(button7);
+        }
+    
+        // Викликаємо функцію після завантаження сторінки
+        window.onload = function() {
+            // Викликаємо функцію displayContent з номером 1 при завантаженні сторінки
+            displayContent(1);
+        };
+    
+        function adjustButtonSizes() {
+            // Отримання всіх кнопок
+            const buttons = document.querySelectorAll(".info-display button");
+    
+            // Знаходження максимальної ширини кнопки
+            let maxWidth = 0;
+            buttons.forEach(button => {
+                const buttonWidth = button.offsetWidth;
+                if (buttonWidth > maxWidth) {
+                    maxWidth = buttonWidth;
+                }
+            });
+    
+            // Застосування максимальної ширини до всіх кнопок
+            buttons.forEach(button => {
+                button.style.width = `${maxWidth}px`;
+            });
+        }
+    
+        function displaySubMenuContent(buttonText) {
+            let contentHTML = ""; // Рядок, в якому буде зберігатися HTML-структура для вмісту
+    
+            // Відповідно до тексту кнопки створюємо відповідний вміст
+            switch (buttonText) {
+                case "Опис предметного середовища":
+                    contentHTML = `
+                            <h3>Опис предметного середовища</h3>
+                            <ol>
+                                <li>Створення інтернет-магазину для здійснення господарської діяльності з продажу товарів з категорії жіночого одягу та задоволення попиту відповідної категорії споживачів.</li>
+                                <li>Узагальнений опис функціоналу:</li>
+                                <ol type="a">
+                                    <li>Реєстрація та вхід в обліковий запис</li>
+                                    <li>Навігація та пошук</li>
+                                    <li>Каталог товарів</li>
+                                    <li>Сторінки товарів (сторінка – товар)</li>
+                                    <li>Кошик покупця</li>
+                                    <li>Оформлення замовлення</li>
+                                    <li>Адміністративний розділ</li>
+                                    <li>Секція новин (гостьова)</li>
+                                    <li>Контактна інформація (зворотній зв’язок)</li>
+                                </ol>
+                            </ol>              
+                    `;
+                    break;
+                case "Тема Мета Місце розташування ЛР №1":
+                    contentHTML = `
+                        <h3>Тема</h3>
+                        <p>СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ.РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ</p>
+
+                        <h3>Мета </h3>
+                        <p>Придбати практичні навички роботи  з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.</p>
+
+                        <h3>Місце розташування ЛР №1</h3>
+                        <p>Розміщено на GitHub</p>
+                    `;
+                    break;
+                case "СТРУКТУРА ДОКУМЕНТУ":
+                    contentHTML = `
+                        <h3>СТРУКТУРА</h3>
+                        <p>HTML-код ТАБЛИЦЬ.</p>
+                        <p>HTML-код ФОРМИ.</p>
+                        <p>HTML-код ЗОБРАЖЕННЯ.</p>
+
+                    `;
+                    break;
+
+                    case "HTML-код ТАБЛИЦЬ":
+                        contentHTML = `
+                            <h3>HTML-код ТАБЛИЦЬ</h3>
+                                <pre>
+                                    <code>
+                                        &lt;!-- Таблиця --&gt;
+                                            &lt;table&gt;
+                                                &lt;caption&gt;Таблиця товарів&lt;/caption&gt;
+                                                &lt;thead&gt;
+                                                    &lt;tr&gt;
+                                                        &lt;th&gt;Назва товару&lt;/th&gt;
+                                                        &lt;th&gt;Ціна товару&lt;/th&gt;
+                                                    &lt;/tr&gt;
+                                                &lt;/thead&gt;
+                                                &lt;tbody&gt;
+                                                    &lt;tr&gt;
+                                                        &lt;td&gt;Сукня&lt;/td&gt;
+                                                        &lt;td&gt;500 грн&lt;/td&gt;
+                                                    &lt;/tr&gt;
+                                                    &lt;tr&gt;
+                                                        &lt;td&gt;Блуза&lt;/td&gt;
+                                                        &lt;td&gt;300 грн&lt;/td&gt;
+                                                    &lt;/tr&gt;
+                                                &lt;/tbody&gt;
+                                            &lt;/table&gt;
+                                    </code>
+                                </pre>
+    `;
+    break;
+                    
+                case "HTML-код ФОРМИ":
+                    contentHTML = `
+                        <h3>HTML-код ФОРМИ</h3>
+                        <pre> 
+                            <code>
+                                &lt;!-- Форма --&gt;
+                                    &lt;form&gt;
+                                        &lt;label for="email"&gt;Електронна пошта:&lt;/label&gt;
+                                        &lt;input type="email" id="email" name="email" required&gt;
+                                        &lt;button type="submit"&gt;Підписатись&lt;/button&gt;
+                                        &lt;/form&gt;
+                            </code>
+                        </pre>
+                    `;
+                    /*Використовується елемент <pre> для збереження форматування тексту, і <code> 
+                        для позначення HTML-коду. Символи < та > замінюються на &lt; і &gt; 
+                        відповідно, щоб вони відображалися як текст у HTML. 
+                        Таким чином відображається HTML-код у вигляді тексту без його виконання .*/
+                    break;
+
+                case "HTML-код ЗОБРАЖЕННЯ":
+                    contentHTML = `
+                        <h3>Фото з описом</h3>
+                        <pre>
+                            <code>
+                                &lt;!-- Фото з описом --&gt;
+                                &lt;div class="gallery"&gt;
+                                    &lt;figure&gt;
+                                        &lt;img src="FASHION_WEEK.jpg" alt="FASHION_WEEK"&gt;
+                                        &lt;figcaption&gt;Модні тренди весна-літо 2024 — що будемо носити наступного сезону&lt;/figcaption&gt;
+                                    &lt;/figure&gt;
+                                    &lt;figure&gt;
+                                        &lt;img src="Milano.jpg" alt="Milano"&gt;
+                                        &lt;figcaption&gt;Як українські дизайнери підкорювали Мілан за підтримки «ангела моди» Джен Сідарі&lt;/figcaption&gt;
+                                    &lt;/figure&gt;
+                                    &lt;figure&gt;
+                                        &lt;img src="ПІДТРИМКА.jpeg" alt="ПІДТРИМКА"&gt;
+                                        &lt;figcaption&gt;Підтримка України на світових подіумах&lt;/figcaption&gt;
+                                    &lt;/figure&gt;
+                                    &lt;figure&gt;
+                                        &lt;img src="LONDON.jpeg" alt="LONDON"&gt;
+                                        &lt;figcaption&gt;Тиждень моди в Лондоні - чим надихались митці&lt;/figcaption&gt;
+                                    &lt;/figure&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>
+                    `;
+                    break;
+
+                case "ВИСНОВКИ":
+                    contentHTML = `
+                        <h3>ВИСНОВКИ</h3>
+                        <p>В ході виконання лабораторної роботи набуто практичні навички реалізації завдань  з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.</p>
+                        <p>Набуті знання та навички закріплено в шляхом створення шаблону звітного HTML-документу для відображення результатів роботи всіх лабораторних робіт.</p>
+                    `;
+                    break;
+
+                
+                // За необхідності додаються інші варіанти для інших кнопок
+                default:
+                    contentHTML = "<p>Тут має відображатися зміст вибраного пункту меню.</p>";
+                    break;
+            }
+    
+            // Виведення змісту відповідного пункту меню в блок
+            document.getElementById("lab-content").innerHTML = contentHTML;
+        }
+    </script>
+    
+    
+</body>
+</html>
+
