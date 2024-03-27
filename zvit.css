@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #998af188;
+}
+header {
+    text-align: center;
+    background-color: #7130eb8e;
+    padding: 20px;
+}
+.author-info {
+    text-align: center;
+    margin-top: 20px;
+}
+.lab-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрування кнопок меню лабораторних робіт */
+    position: relative; /* Для позиціонування кнопок меню змісту */
+    margin-top: -20px; /* Збільшення відступу вгору, щоб підняти кнопки */
+}
+.lab-menu button {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #9b98b6;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Забороняє переносити текст на новий рядок */
+}
+.report-content {
+    display: flex;
+    flex-direction: row;
+}
+.info-display {
+    flex: 1;
+    padding: 20px;
+    background-color: #7130eb8e;
+}
+.lab-content {
+    flex: 3;
+    padding: 20px;
+    background-color: #9b98b6;
+}
+.lab-number {
+    display: flex;
+    justify-content: space-around; /* відцентрування /*flex-start; /* Вирівнювання кнопок ліворуч */
+    flex-wrap: wrap; /* Дозволяє тексту переноситися на новий рядок */
+    margin-top: 20px;
+}
+.lab-number div {
+    min-width: 100px; /* Мінімальна ширина кнопки */
+    max-width: 250px; /* Максимальна ширина кнопки */
+    height: 50px;
+    background-color: #7130eb8e;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden; /* Забороняє виходити тексту за межі кнопки */
+    text-overflow: ellipsis; /* Показує мінімальну частину тексту з меж кнопки, якщо він не поміщається */
+    display: flex; /* Розміщення тексту у дві строчки */
+    flex-direction: column; /* Розміщення тексту у дві строчки */
+    justify-content: center; /* Вирівнювання тексту по центру вертикально */
+    align-items: center; /* Вирівнювання тексту по центру горизонтально */
+}
