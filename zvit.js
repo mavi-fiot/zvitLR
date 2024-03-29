@@ -97,53 +97,67 @@ function createSubMenu(labNumber) {
 else if (labNumber === 2) {
     
     let button21 = document.createElement("button");
-    button21.textContent = "Опис предметного середовища";
+    button21.textContent = "Тема, мета ЛР №2. Місце розташування сайту, звіту";
     button21.onclick = function() {
-        displaySubMenuContent("Опис предметного середовища");
+        displaySubMenuContent("Тема, мета ЛР №2. Місце розташування сайту, звіту");
     };
     menu.appendChild(button21);
 
     let button22 = document.createElement("button");
-    button22.textContent = "Тема Мета Місце розташування ЛР №1";
+    button22.textContent = "Способи підключення стилів";
     button22.onclick = function() {
-        displaySubMenuContent("Тема Мета Місце розташування ЛР №1");
+        displaySubMenuContent("Способи підключення стилів");
     };
     menu.appendChild(button22);
 
     let button23 = document.createElement("button");
-    button23.textContent = "СТРУКТУРА ДОКУМЕНТУ";
+    button23.textContent = "СЕЛЕКТОРИ";
     button23.onclick = function() {
-        displaySubMenuContent("СТРУКТУРА ДОКУМЕНТУ");
+        displaySubMenuContent("СЕЛЕКТОРИ");
     };
-    menu.appendChild(button3);
+    menu.appendChild(button23);
 
-    let button4 = document.createElement("button");
-    button4.textContent = "HTML-код ТАБЛИЦЬ";
-    button4.onclick = function() {
-        displaySubMenuContent("HTML-код ТАБЛИЦЬ");
+    let button24 = document.createElement("button");
+    button24.textContent = "Селектори тегу";
+    button24.onclick = function() {
+        displaySubMenuContent("Селектори тегу");
     };
-    menu.appendChild(button4);
+    menu.appendChild(button24);
 
-    let button5 = document.createElement("button");
-    button5.textContent = "HTML-код ФОРМИ";
-    button5.onclick = function() {
+    let button25 = document.createElement("button");
+    button25.textContent = "Селектори класу";
+    button25.onclick = function() {
         displaySubMenuContent("HTML-код ФОРМИ");
     };
-    menu.appendChild(button5);
+    menu.appendChild(button25);
 
-    let button6 = document.createElement("button");
-    button6.textContent = "HTML-код ЗОБРАЖЕННЯ";
-    button6.onclick = function() {
-        displaySubMenuContent("HTML-код ЗОБРАЖЕННЯ");
+    let button26 = document.createElement("button");
+    button26.textContent = "Селектори ідентифікаторів";
+    button26.onclick = function() {
+        displaySubMenuContent("Селектори ідентифікаторів");
     };
-    menu.appendChild(button6);
+    menu.appendChild(button26);
 
-    let button7 = document.createElement("button");
-    button7.textContent = "ВИСНОВКИ";
-    button7.onclick = function() {
-        displaySubMenuContent("ВИСНОВКИ");
+    let button27 = document.createElement("button");
+    button27.textContent = "Інші селектори";
+    button27.onclick = function() {
+        displaySubMenuContent("Інші селектори");
     };
-    menu.appendChild(button7);
+    menu.appendChild(button27);
+
+    let button28 = document.createElement("button");
+    button28.textContent = "CSS: Шрифти. Текст. Таблиці. Фон. Контур. Списки. CSS просунутий";
+    button28.onclick = function() {
+        displaySubMenuContent("ІCSS: Шрифти. Текст. Таблиці. Фон. Контур. Списки. CSS просунутий");
+    };
+    menu.appendChild(button28);
+
+    let button29 = document.createElement("button");
+    button29.textContent = "ВИСНОВКИ до ЛР №2";
+    button29.onclick = function() {
+        displaySubMenuContent("ВИСНОВКИ до ЛР №2");
+    };
+    menu.appendChild(button29);
 }
 }
 // Викликаємо функцію після завантаження сторінки
@@ -417,8 +431,23 @@ break;
             `;
             break;
 
+        case "Тема, мета ЛР №2. Місце розташування сайту, звіту":
+            contentHTML = `
+                <h3>Тема, мета ЛР №2. Місце розташування сайту, звіту</h3>
+                <p>Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</p>
+
+                <p>Мета: придбати практичні навички роботи  з селекторами, ідентифікаторами, списками,  різноманітними властивостями кольору і фону,  
+                зовнішними та внутрішними  відступами,  плаваючими елементами, оформленням текстових елементів.</p>
+
+                <h3>Місце розташування ЛР №2</h3>
+                <p>Розміщено на GitHub</p>
+                <p><a href="https://github.com/mavi-fiot/zvitLR_html" target="_blank">Звіт.</a> <a href="https://mavi-fiot.github.io/zvitLR_html/" target="_blank">Сайт звіту.</a></p>
+                <p><a href="https://github.com/mavi-fiot/webStream" target="_blank">Проект.</a> <a href="https://mavi-fiot.github.io/webStream/" target="_blank">Сайт проекту.</a></p>
+                <p><a href="https://github.com/mavi-fiot/resume" target="_blank">Резюме.</a> <a href="https://mavi-fiot.github.io/resume/" target="_blank">Сайт резюме.</a></p>
+                
+            `;
+            break;
         
-        // За необхідності додаються інші варіанти для інших кнопок
         default:
             contentHTML = "<p>Тут має відображатися зміст вибраного пункту меню.</p>";
             break;
