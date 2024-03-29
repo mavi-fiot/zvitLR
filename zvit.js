@@ -19,8 +19,15 @@ function displayContent(labNumber) {
         // Створити меню змісту для першої роботи
         createSubMenu(1);
     }
-    // Додайте зміст для інших лабораторних робіт, якщо потрібно
-
+    if (labNumber === 2) {
+        // Встановити зміст лабораторної роботи для першої роботи
+        labContent = `
+            <h3>Лабораторна робота № 2</h3>
+            <p>Скористайтесь меню змісту звіту</p> 
+        `;
+        // Створити меню змісту для першої роботи
+        createSubMenu(2);
+    }
     // Вивести зміст лабораторної роботи в відповідний блок
     document.getElementById("lab-content").innerHTML = labContent;
 
@@ -35,6 +42,8 @@ function createSubMenu(labNumber) {
     infoDisplay.appendChild(menu);
 
     // Тут можна додати кнопки для меню змісту
+    if (labNumber === 1) {
+
     let button1 = document.createElement("button");
     button1.textContent = "Опис предметного середовища";
     button1.onclick = function() {
@@ -85,6 +94,58 @@ function createSubMenu(labNumber) {
     menu.appendChild(button7);
 }
 
+else if (labNumber === 2) {
+    
+    let button21 = document.createElement("button");
+    button21.textContent = "Опис предметного середовища";
+    button21.onclick = function() {
+        displaySubMenuContent("Опис предметного середовища");
+    };
+    menu.appendChild(button21);
+
+    let button22 = document.createElement("button");
+    button22.textContent = "Тема Мета Місце розташування ЛР №1";
+    button22.onclick = function() {
+        displaySubMenuContent("Тема Мета Місце розташування ЛР №1");
+    };
+    menu.appendChild(button22);
+
+    let button23 = document.createElement("button");
+    button23.textContent = "СТРУКТУРА ДОКУМЕНТУ";
+    button23.onclick = function() {
+        displaySubMenuContent("СТРУКТУРА ДОКУМЕНТУ");
+    };
+    menu.appendChild(button3);
+
+    let button4 = document.createElement("button");
+    button4.textContent = "HTML-код ТАБЛИЦЬ";
+    button4.onclick = function() {
+        displaySubMenuContent("HTML-код ТАБЛИЦЬ");
+    };
+    menu.appendChild(button4);
+
+    let button5 = document.createElement("button");
+    button5.textContent = "HTML-код ФОРМИ";
+    button5.onclick = function() {
+        displaySubMenuContent("HTML-код ФОРМИ");
+    };
+    menu.appendChild(button5);
+
+    let button6 = document.createElement("button");
+    button6.textContent = "HTML-код ЗОБРАЖЕННЯ";
+    button6.onclick = function() {
+        displaySubMenuContent("HTML-код ЗОБРАЖЕННЯ");
+    };
+    menu.appendChild(button6);
+
+    let button7 = document.createElement("button");
+    button7.textContent = "ВИСНОВКИ";
+    button7.onclick = function() {
+        displaySubMenuContent("ВИСНОВКИ");
+    };
+    menu.appendChild(button7);
+}
+}
 // Викликаємо функцію після завантаження сторінки
 window.onload = function() {
     // Викликаємо функцію displayContent з номером 1 при завантаженні сторінки
